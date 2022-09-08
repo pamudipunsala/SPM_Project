@@ -46,7 +46,7 @@ const Header = () => {
         
         <div>
             <header id='header'>{showNavigation()}</header>
-            <Link to={'/pay'}>Pay</Link>
+            
         </div>
     );
 };
