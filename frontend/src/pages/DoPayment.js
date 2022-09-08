@@ -1,5 +1,7 @@
 import React,{Component, useRef} from "react";
 import axios from "axios";
+import "../index.css";
+import "./button.css"
 import emailjs from '@emailjs/browser';
 
 //const form = useRef();
@@ -66,6 +68,9 @@ export default class DoPayment extends Component {
                     }
                 )
             }
+            else {
+                alert("invlid input")
+            }
         })
 
         //emailjs.sendForm('service_po4f3vc', 'template_mzpvntf', form.current, 'r0p6mYficqz5Ov-qX')
@@ -78,10 +83,11 @@ export default class DoPayment extends Component {
 
     render(){
         return(
-        <div className="col-md-8 mt-4 mx-auto">
-                <h1 className="h3 mb-3 font-weight-normal">Payment Gateway</h1>
+        <div className="container">
+            <div className="register">
+                <h1 >Payment Gateway</h1>
                 <form className="needs-validation" noValidate>
-                    <div className="form-group" style={{marginBottom:'15px'}}>
+                    
                         <label style={{marginBottom:'5px'}}>Name on card</label>
                             <input
                                 className="form-control"
@@ -92,10 +98,10 @@ export default class DoPayment extends Component {
                                 onChange={this.handleInputChange}
                                 value={this.state.cname}
                             />
-                    </div>
+                  
 
 
-                    <div className="form-group" style={{marginBottom:'15px'}}>
+                    
                         
                         <label style={{marginBottom:'5px'}}>Card Number</label>
                         <input
@@ -106,9 +112,9 @@ export default class DoPayment extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.cardNo}
                         />
-                    </div>
+                    
 
-                    <div className="form-group" style={{marginBottom:'15px'}}>
+                    
                         
                         <label style={{marginBottom:'5px'}}>Date</label>
                         <input
@@ -119,9 +125,9 @@ export default class DoPayment extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.cdate}
                         />
-                    </div>
+                    
 
-                    <div className="form-group" style={{marginBottom:'15px'}}>
+                    
                         
                         <label style={{marginBottom:'5px'}}>Expire Month</label>
                         <input
@@ -132,9 +138,9 @@ export default class DoPayment extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.expMonth}
                         />
-                    </div>
+                   
 
-                    <div className="form-group" style={{marginBottom:'15px'}}>
+                    
                         
                         <label style={{marginBottom:'5px'}}>Expire Year</label>
                         <input
@@ -145,9 +151,9 @@ export default class DoPayment extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.expYear}
                         />
-                    </div>
+                    
 
-                    <div className="form-group" style={{marginBottom:'15px'}}>
+                   
                         
                          <label style={{marginBottom:'5px'}}>CVV</label>
                             <input
@@ -159,9 +165,7 @@ export default class DoPayment extends Component {
                                 value={this.state.cvv}
                             />
 
-                    </div>
-
-                    <div className="form-group" style={{marginBottom:'15px'}}>
+                   
                         
                         <label style={{marginBottom:'5px'}}>Email</label>
                         <input
@@ -172,9 +176,7 @@ export default class DoPayment extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.cemail}
                         />
-                    </div>
-
-                    <div className="form-group" style={{marginBottom:'15px'}}>
+                    
                         
                         <label style={{marginBottom:'5px'}}>Amount</label>
                         <input
@@ -185,13 +187,12 @@ export default class DoPayment extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.amount}
                         />
-                    </div>
+                    
 
-                    <button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}  >
-                        <i className="far fa-check-square"></i>
-                        &nbsp; Save
+                    <button className="button-29" role="button" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}  > Checkout
                     </button>
                 </form>
+                </div>
             </div>
         )
     }

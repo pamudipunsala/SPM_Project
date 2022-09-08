@@ -26,7 +26,7 @@ const Signup = () => {
     const register = () => {
         const { uname, regNo, uemail, userName, upwd } = users
         if( uname && regNo && uemail && userName && upwd){
-            axios.post("http://localhost:3000/register", users)
+            axios.post("http://localhost:5000/register", users)
             .then( res => {
                 alert(res.data.message)
                 history.push("/login")

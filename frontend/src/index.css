@@ -419,7 +419,7 @@ input[type="search"]{
   text-align: center;
 }
 
-.register > input {
+.register > input,input[type="date"],input[type="email"],input[type="number"] {
   border-radius: 8px;
   border: 2px solid #dddfe2;
   outline: none;
@@ -440,4 +440,15 @@ input[type="search"]{
   border-radius: 8px;
   outline: none;
   cursor: pointer;
+}
+
+.register > input[type="date"] {
+  border-radius: 8px;
+  border: 2px solid #dddfe2;
+  outline: none;
+  color: #1d2129;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  width: 92%;
+  font-size: 1rem;
 }
