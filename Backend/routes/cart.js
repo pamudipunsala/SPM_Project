@@ -35,4 +35,19 @@ router.post("/cart", async (req, res) => {
     }
   });
 
+  //get cart
+router.get('/cart',(req,res)=>{
+  Cart.find().exec((err,cart) => {
+      if(err){
+          return res.status(400).json({
+              error:err
+          });
+      }
+      return res.status(200).json({
+          success:true,
+          existingPayment:cart
+      });
+  });
+});
+
   module.exports = router;

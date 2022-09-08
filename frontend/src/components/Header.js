@@ -29,6 +29,9 @@ const Header = () => {
                     <li className="nav-item">
                         <Link to="#" className="nav-link">Sign In</Link>
                     </li>
+                    <li className="nav-item">
+                        <a href={'/pay'} className="nav-link">Pay</a>
+                    </li>
                     
                     
                 </ul>
@@ -39,7 +42,13 @@ const Header = () => {
     );
 
     //render
-    return <header id='header'>{showNavigation()}</header>;
+    return (
+        
+        <div>
+            <header id='header'>{showNavigation()}</header>
+            <Link to={'/pay'}>Pay</Link>
+        </div>
+    );
 };
 
 export default Header;
