@@ -1,7 +1,7 @@
 import React from 'react';
-import {BrowserRouter as Router, Routes, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
-// import DoPayment from './pages/DoPayment';
+import DoPayment from './Pages/DoPayment';
 
 //Item Details Pages
 import Insert_Item_Dtl from './Pages/Insert_Item_Dtl';
@@ -25,7 +25,8 @@ function App(){
       <Route element={<NotFound/>}/>
       <Route path='/additems' element={<Insert_Item_Dtl/>}/>
       <Route path='/viewIDtl' element={<ViewItemDtl/>}/>
-      {/* <Route path='/pay' component={DoPayment}/> */}
+      
+      <Route path='/pay' element={<DoPayment/>}/>
     </Routes>
  
 </Router>

@@ -46,7 +46,6 @@ const Header = () => {
         
         <div>
             <header id='header'>{showNavigation()}</header>
-            
         </div>
     );
 };
