@@ -32,6 +32,10 @@ const Header = () => {
                     <li className="nav-item">
                         <a href={'/pay'} className="nav-link">Pay</a>
                     </li>
+
+                    <li className="nav-item">
+                        <a href={'/viewcart'} className="nav-link">Shopping Cart</a>
+                    </li>
                     
                     
                 </ul>

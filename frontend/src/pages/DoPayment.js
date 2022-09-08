@@ -1,7 +1,8 @@
-import React,{Component} from "react";
+import React,{Component, useRef} from "react";
 import axios from "axios";
 import emailjs from '@emailjs/browser';
 
+//const form = useRef();
 export default class DoPayment extends Component {
     constructor(props){
         super(props);
@@ -19,6 +20,7 @@ export default class DoPayment extends Component {
     }
     
     
+
 
     handleInputChange = (e) => {
         const {name,value} = e.target;
@@ -66,12 +68,12 @@ export default class DoPayment extends Component {
             }
         })
 
-        emailjs.sendForm('service_po4f3vc', 'template_mzpvntf', 'r0p6mYficqz5Ov-qX')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-        });
+        //emailjs.sendForm('service_po4f3vc', 'template_mzpvntf', form.current, 'r0p6mYficqz5Ov-qX')
+          //  .then((result) => {
+            //    console.log(result.text);
+            //}, (error) => {
+              //  console.log(error.text);
+        //});
     }
 
     render(){
@@ -98,10 +100,10 @@ export default class DoPayment extends Component {
                         <label style={{marginBottom:'5px'}}>Card Number</label>
                         <input
                             type="text"
-                            id="cardNO"
-                            name="cardNO"
+                            id="cardNo"
+                            name="cardNo"
                             placeholder="1111-2222-3333-4444"
-                            onChange={this.handleinputChange}
+                            onChange={this.handleInputChange}
                             value={this.state.cardNo}
                         />
                     </div>

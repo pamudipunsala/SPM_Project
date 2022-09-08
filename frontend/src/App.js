@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
 import DoPayment from './Pages/DoPayment';
+import ViewCart from './Pages/viewCart';
 
 //Item Details Pages
 import Insert_Item_Dtl from './Pages/Insert_Item_Dtl';
@@ -24,7 +25,7 @@ function App(){
       <Route path='/signin' element={<Signin/>}/>
       <Route path='/additems' element={<Insert_Item_Dtl/>}/>
       <Route path='/viewIDtl' element={<ViewItemDtl/>}/>
-      
+      <Route path='/viewcart' element={<ViewCart/>}/>
       <Route path='/pay' element={<DoPayment/>}/>
     </Routes>
  
