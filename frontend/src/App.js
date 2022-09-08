@@ -11,7 +11,7 @@ import ViewItemDtl from './Pages/ViewItemDtl';
 import Home from './Pages/Home';
 import Signup from './Pages/Signup';
 import Signin from './Pages/Signin';
-import NotFound from './Pages/NotFound';
+
 
 function App(){
   return(
@@ -22,7 +22,6 @@ function App(){
       <Route path='/' element={<Home/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/signin' element={<Signin/>}/>
-      <Route element={<NotFound/>}/>
       <Route path='/additems' element={<Insert_Item_Dtl/>}/>
       <Route path='/viewIDtl' element={<ViewItemDtl/>}/>
       

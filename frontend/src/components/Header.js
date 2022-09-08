@@ -6,7 +6,7 @@ const Header = () => {
     //views
     const showNavigation = () => (
         <nav style={{margin:'5px', paddingLeft:'20px'}} className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <Link to="#" className="navbar-brand" >Grocery Store</Link>
+            <Link to="/" className="navbar-brand" >Grocery Store</Link>
             <button 
                 className="navbar-toggler" 
                 type="button" 
@@ -24,10 +24,10 @@ const Header = () => {
                         <Link to="#" className="nav-link">Products </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="#" className="nav-link">Sign Up </Link>
+                        <Link to="/signup" className="nav-link">Sign Up </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="#" className="nav-link">Sign In</Link>
+                        <Link to="/signin" className="nav-link">Sign In</Link>
                     </li>
                     <li className="nav-item">
                         <a href={'/pay'} className="nav-link">Pay</a>
