@@ -1,5 +1,5 @@
 const express = require('express');
-const Dteam = require('../models/Dteam');
+const Dteams = require('../models/Dteam');
 
 const router = express.Router();
 
@@ -21,7 +21,7 @@ router.post('/dteam/add', (req,res) => {
 
 //retrive all delivery teams details
 router.get('/dteams', (req,res) => {
-    Dteam.find().exec((err, teams) => {
+    Dteams.find().exec((err, teams) => {
         if(err){
             return res.status(400).json({
                 error:err
@@ -29,7 +29,7 @@ router.get('/dteams', (req,res) => {
         }
         return res.status(200).json({
             success:true,
-            existingDteam:teams
+            existingDteams:teams
         });
     });
 });
@@ -38,7 +38,7 @@ router.get('/dteams', (req,res) => {
 router.get("/dteam/:id", (req,res) => {
     let teamcode = req.params.id;
 
-    Dteam.findById(teamcode, (err,teams) => {
+    Dteams.findById(teamcode, (err,teams) => {
         if(err){
             return res.status(400).json({success:false, err});
         }
@@ -51,7 +51,7 @@ router.get("/dteam/:id", (req,res) => {
 
 //update team details
 router.put('/dteam/update/:id',(req,res)=>{
-    Dteam.findByIdAndUpdate(
+    Dteams.findByIdAndUpdate(
         req.params.id,{
             $set:req.body
         },
@@ -68,7 +68,7 @@ router.put('/dteam/update/:id',(req,res)=>{
 
 //delete specific team details
 router.delete('/dteam/delete/:id',(req,res)=>{
-    Dteam.findByIdAndRemove(req.params.id).exec((err,deleteTeam)=>{
+    Dteams.findByIdAndRemove(req.params.id).exec((err,deleteTeam)=>{
         if(err) return res.status(400).json({
             message:"Couldn't Delete Team",err
         });

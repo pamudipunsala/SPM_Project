@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {Component} from 'react';
+import '../index.css';
 
 class ViewTeam extends Component{
     constructor(props){
@@ -10,14 +11,14 @@ class ViewTeam extends Component{
     }
 
     componentDidMount(){
-        this.displayItem();
+        this.displayTeam();
     }
 
-    displayItem(){
+    displayTeam(){
         axios.get("http://localhost:5000/dteams").then((res) => {
             if(res.data.success){
                 this.setState({
-                    teams:res.data.existingteams
+                    teams:res.data.existingDteams
                 });
                 console.log(this.state.teams);
             }
@@ -37,9 +38,9 @@ class ViewTeam extends Component{
 
     handleSearchArea= (e)=>{
         const searchKey =e.currentTarget.value;
-        axios.get("http://localhost:5000/teams").then(res=>{
+        axios.get("http://localhost:5000/dteams").then(res=>{
           if(res.data.success){
-            this.filterData(res.data.existingteams,searchKey)
+            this.filterData(res.data.existingDteams,searchKey)
       }
       });
     }
@@ -50,7 +51,7 @@ class ViewTeam extends Component{
                 <div className="addteam" >
                 <div className="ish">
                 <div style={{textAlign:"center", paddingTop:"50px"}}>
-                <h2>All Topic Details</h2>                        
+                <h2>Delivery Teams</h2>                        
                 <div>
                 <input className="search" type="search" placeholder="Search" name="searchQuery" onChange={this.handleSearchArea}>
             </input><br/><br/>
@@ -71,11 +72,11 @@ class ViewTeam extends Component{
                         {this.state.teams.map((teams,index) => (
                             <tr key={index}>
                                 <th scope="row">{index+1}</th>
-                                <td><a href={`/sinviewidtl/${teams._id}`} style={{color: "white"}}>{teams.teamcode}</a></td>
-                                <td><a href={`/sinviewidtl/${teams._id}`} style={{color: "white"}}>{teams.memberone}</a></td>
-                                <td><a href={`/sinviewidtl/${teams._id}`} style={{color: "white"}}>{teams.membertwo}</a></td>
-                                <td><a href={`/sinviewidtl/${teams._id}`} style={{color: "white"}}>{teams.memberthree}</a></td>
-                                <td><a href={`/sinviewidtl/${teams._id}`} style={{color: "white"}}>{teams.vehicleNo}</a></td>
+                                <td>{teams.teamcode}</td>
+                                <td>{teams.memberone}</td>
+                                <td>{teams.membertwo}</td>
+                                <td>{teams.memberthree}</td>
+                                <td>{teams.vehicleNo}</td>
                                 <td>
                                     
                                     </td>
