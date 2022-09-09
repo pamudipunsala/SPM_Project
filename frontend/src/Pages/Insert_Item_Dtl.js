@@ -131,10 +131,11 @@ export default class Insert_Item_Dtl extends Component{
 
     render(){
         return (
-            <div className="addtopic">
+            <div className="additem">
                 <div className="ish">
-                <button className="abtn" type="button"><a href="/viewIDtl" style={{textDecoration:'none',color:'black'}} required><b>View Details</b></a></button>
-                <form style={{margin: "auto", padding: "15px", maxWidth: "400px", alignContent: "center", }}>
+                <button className="abtn" type="button"><a href="/viewIDtl" style={{textDecoration:'none',color:'white'}} required><b>View Details</b></a></button>
+                <div className="new"> 
+                <form style={{margin: "auto", padding: "15px", maxWidth: "400px", alignContent: "center", backgroundColor: "rgba(0, 0, 0, 0.560)", color:'white'}}>
                     <div >
                     <h2>Insert Item Details</h2>
 
@@ -147,7 +148,7 @@ export default class Insert_Item_Dtl extends Component{
                             value={this.state.icode} 
                             onChange={this.InputChange}/>
                     </div>
-                    <div style={{color: "red"}}>{this.state.icodeError}</div>
+                    <div style={{color: "red"}}><b>{this.state.icodeError}</b></div>
                     
                     <div>
                         <label name="iname"><b>Item Name</b></label><br/>
@@ -158,7 +159,7 @@ export default class Insert_Item_Dtl extends Component{
                             value={this.state.iname} 
                             onChange={this.InputChange}/>
                     </div>
-                    <div style={{color: "red"}}>{this.state.inameError}</div>
+                    <div style={{color: "red"}}><b>{this.state.inameError}</b></div>
 
                     <div>
                         <label name="ctg"><b>Category</b></label><br/>
@@ -169,7 +170,7 @@ export default class Insert_Item_Dtl extends Component{
                             value={this.state.ctg} 
                             onChange={this.InputChange}/>
                     </div>
-                    <div style={{color: "red"}}>{this.state.ctgError}</div>
+                    <div style={{color: "red"}}><b>{this.state.ctgError}</b></div>
 
                     <div>
                         <label name="amt"><b>Amount</b></label><br/>
@@ -180,7 +181,7 @@ export default class Insert_Item_Dtl extends Component{
                             value={this.state.amt} 
                             onChange={this.InputChange}/>
                     </div>
-                    <div style={{color: "red"}}>{this.state.amtError}</div>
+                    <div style={{color: "red"}}><b>{this.state.amtError}</b></div>
 
                     <div>
                         <label name="price"><b>Price</b></label><br/>
@@ -191,12 +192,13 @@ export default class Insert_Item_Dtl extends Component{
                             value={this.state.price} 
                             onChange={this.InputChange}/>
                     </div>
-                    <div style={{color: "red"}}>{this.state.priceError}</div>
+                    <div style={{color: "red"}}><b>{this.state.priceError}</b></div>
 
                     <br/><br/>
-                    <button className="sbtn" type="submit" onClick={this.onSubmit} ><a href="/viewIDtl" style={{textDecoration:'none',color:'black'}}><b>Save</b></a></button><br/>
+                    <button className="sbtn" type="submit" onClick={this.onSubmit} ><a href="/viewIDtl" style={{textDecoration:'none',color:'white'}}><b>Save</b></a></button><br/>
                     </div>
                 </form> 
+                </div>
                 </div>
             </div>
         )

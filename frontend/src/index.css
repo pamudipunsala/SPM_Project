@@ -136,7 +136,7 @@ h3 {
 }
 
 .btn {
-  padding: 2px 4px;
+  padding: 10px 20px;
   border: 1px solid #000;
   border-radius: 5px;
   background: #000;
@@ -214,7 +214,8 @@ h3 {
   }
 }
 
-.addtopic{
+.additem{
+  background-image: url("./images/2.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size:100% 100%;
@@ -223,10 +224,11 @@ h3 {
 
 .abtn{
   margin-top: 50px;
+  color-scheme: white;
   width: 250px;
 	height: 30px;
   margin-left: 1000px;
-  background-color:rgba(24, 112, 2, 0.692);
+  background-color:rgb(17, 14, 13);
 }
 
 label{
@@ -234,6 +236,7 @@ label{
 }
 
 input[type="text"],
+input[type="number"],
 select{
     width: 100%;
     height: 50px;
@@ -261,13 +264,13 @@ input[type="search"]{
 .ish{
   background-repeat: no-repeat;
   background-size: auto;
-  background-color:  	#227e4885;
+  background-color:  	#c55f3042;
 }
 
 .sbtn1 {
   width: 200px;
 	height: 40px;
-  background-color: rgb(24, 112, 2);
+  background-color: black;
   margin: 8px 0;
   border-radius: 4px;
   cursor: pointer;
@@ -276,16 +279,17 @@ input[type="search"]{
 
 .sbtn {
   width: 370px;
-  background-color: rgb(24, 112, 2);
+  background-color: black;
   padding: 14px 20px;
   margin: 8px 0;
   border-radius: 4px;
   cursor: pointer;
 }
 
+.abtn:hover,
 .sbtn1:hover,
 .sbtn:hover {
-  background-color: #45a049;
+  background-color: rgba(0, 0, 0, 0.589);
 }
 
 .stable {
@@ -297,11 +301,14 @@ input[type="search"]{
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
+.table{
+  background-color: rgba(0, 0, 0, 0.589);
+}
 
 .vbtn {
   width: 100px;
 	height: 30px;
-  background-color: rgb(24, 112, 2);
+  background-color: black;
   margin: 8px 0;
   border-radius: 4px;
   cursor: pointer;
@@ -311,7 +318,7 @@ input[type="search"]{
 .vbtn1{
   width: 100px;
 	height: 30px;
-  background-color: rgb(24, 112, 2);
+  background-color: black;
   margin: 8px 0;
   border-radius: 4px;
   cursor: pointer;
@@ -320,7 +327,7 @@ input[type="search"]{
 .vbtn2 {
   width: 100px;
 	height: 30px;
-  background-color: rgb(24, 112, 2);
+  background-color: black;
   margin: 8px 0;
   border-radius: 4px;
   cursor: pointer;
@@ -330,11 +337,11 @@ input[type="search"]{
 .vbtn:hover,
 .vbtn1:hover
 .vbtn2:hover {
-  background-color: #45a049;
+  background-color: rgba(0, 0, 0, 0.589);
 }
 
 .dis{
-  box-shadow: 5px 10px 18px #075311;
+  box-shadow: 5px 10px 18px black;
   border-radius: 10px;
   margin-left: 400px;
   margin-right: 350px;
@@ -419,7 +426,7 @@ input[type="search"]{
   text-align: center;
 }
 
-.register > input,input[type="date"],input[type="email"],input[type="number"] {
+.register > input {
   border-radius: 8px;
   border: 2px solid #dddfe2;
   outline: none;
@@ -440,15 +447,4 @@ input[type="search"]{
   border-radius: 8px;
   outline: none;
   cursor: pointer;
-}
-
-.register > input[type="date"] {
-  border-radius: 8px;
-  border: 2px solid #dddfe2;
-  outline: none;
-  color: #1d2129;
-  margin: 0.5rem 0;
-  padding: 0.5rem 0.75rem;
-  width: 92%;
-  font-size: 1rem;
 }

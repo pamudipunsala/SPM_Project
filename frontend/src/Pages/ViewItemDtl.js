@@ -42,19 +42,19 @@ class ViewItemDtl extends Component{
             this.filterData(res.data.existingItems,searchKey)
       }
       });
-      }
+    }
     
     render(){
         return(
             
-                <div className="addtopic" >
+                <div className="additem" >
                 <div className="ish">
                 <div style={{textAlign:"center", paddingTop:"50px"}}>
                 <h2>All Topic Details</h2>                        
                 <div>
                 <input className="search" type="search" placeholder="Search" name="searchQuery" onChange={this.handleSearchArea}>
             </input><br/><br/>
-                <table className="table" style={{margin: "auto", padding: "15px", maxWidth: "1000px", alignContent: "center", }}>
+                <table className="table" style={{margin: "auto", padding: "15px", maxWidth: "1000px", alignContent: "center", color: "white"}}>
                     <thead>
                         <tr>
                             <th scope="col"></th>
@@ -70,17 +70,17 @@ class ViewItemDtl extends Component{
                         {this.state.items.map((items,index) => (
                             <tr key={index}>
                                 <th scope="row">{index+1}</th>
-                                <td><a href={`/sinviewidtl/${items._id}`}>{items.icode}</a></td>
-                                <td><a href={`/sinviewidtl/${items._id}`}>{items.iname}</a></td>
-                                <td><a href={`/sinviewidtl/${items._id}`}>{items.ctg}</a></td>
-                                <td><a href={`/sinviewidtl/${items._id}`}>{items.amt}</a></td>
-                                <td><a href={`/sinviewidtl/${items._id}`}>{items.price}</a></td>
+                                <td><a href={`/sinviewidtl/${items._id}`} style={{color: "white"}}>{items.icode}</a></td>
+                                <td><a href={`/sinviewidtl/${items._id}`} style={{color: "white"}}>{items.iname}</a></td>
+                                <td><a href={`/sinviewidtl/${items._id}`} style={{color: "white"}}>{items.ctg}</a></td>
+                                <td><a href={`/sinviewidtl/${items._id}`} style={{color: "white"}}>{items.amt}</a></td>
+                                <td><a href={`/sinviewidtl/${items._id}`} style={{color: "white"}}>{items.price}</a></td>
 
                             </tr>
                         ))}
                     </tbody>
                 </table><br/><br/>
-                <button className="sbtn1" type="button" ><a href="/addtdtl" style={{textDecoration:'none',color:'black'}}><b>Add new</b></a></button><br/>
+                <button className="sbtn1" type="button" ><a href="/additems" style={{textDecoration:'none',color:'white'}}><b>Add new</b></a></button><br/>
                 <br/><br/></div>
             </div>
             </div>
