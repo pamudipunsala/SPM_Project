@@ -5,7 +5,7 @@ const router = express.Router();
 
 //add delivery team
 router.post('/dteam/add', (req,res) => {
-    let newTeam = new Dteam(req.body);
+    let newTeam = new Dteams(req.body);
 
     newTeam.save((err) => {
         if(err){
