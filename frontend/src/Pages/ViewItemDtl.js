@@ -63,7 +63,8 @@ class ViewItemDtl extends Component{
                             <th scope="col">Category</th>
                             <th scope="col">Amount</th>
                             <th scope="col">Price</th>
-                            
+                            <th scope="col"></th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -75,7 +76,16 @@ class ViewItemDtl extends Component{
                                 <td><a href={`/sinviewidtl/${items._id}`} style={{color: "white"}}>{items.ctg}</a></td>
                                 <td><a href={`/sinviewidtl/${items._id}`} style={{color: "white"}}>{items.amt}</a></td>
                                 <td><a href={`/sinviewidtl/${items._id}`} style={{color: "white"}}>{items.price}</a></td>
-
+                                <td>
+                                    <a className="edit" href={`/update/${items._id}`}><b>
+                                        <i className="fas fa-edit"></i>Edit</b>
+                                    </a>
+                                    </td>
+                                    <td>
+                                    <a className="delete" href="#" onClick={()=>this.onDelete(items._id)}><b>
+                                        <i className="fas fa-trash-alt"></i>Delete</b>
+                                    </a>
+                                </td>                            
                             </tr>
                         ))}
                     </tbody>

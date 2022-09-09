@@ -448,3 +448,11 @@ input[type="search"]{
   outline: none;
   cursor: pointer;
 }
+
+.edit{
+  color: rgb(243, 243, 30);
+}
+
+.delete{
+  color: rgb(252, 2, 2);
+}
