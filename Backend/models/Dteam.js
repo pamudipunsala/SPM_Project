@@ -4,6 +4,7 @@ const DteamSchema = new mongoose.Schema({
 
     teamcode:{
         type:String,
+        unique: true
         // required:true
     },
     memberone:{

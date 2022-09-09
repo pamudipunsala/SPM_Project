@@ -78,10 +78,14 @@ class ViewTeam extends Component{
                                 <td>{teams.memberthree}</td>
                                 <td>{teams.vehicleNo}</td>
                                 <td>
-                                    
+                                <a className="edit" href={`/update/${teams._id}`}><b>
+                                        <i className="fas fa-edit"></i>Edit</b>
+                                        </a>
                                     </td>
                                     <td>
-                                    
+                                    <a className="delete" href="#" onClick={()=>this.onDelete(teams._id)}><b>
+                                        <i className="fas fa-trash-alt"></i>Delete</b>
+                                    </a>
                                 </td>                            
                             </tr>
                         ))}

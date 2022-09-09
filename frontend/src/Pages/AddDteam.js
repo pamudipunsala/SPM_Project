@@ -38,19 +38,19 @@ export default class AddDteam extends Component{
         }
 
         if(!this.state.memberone){
-            memberoneError = 'Group Leaders\' field cannot be empty!';
+            memberoneError = 'Member 1 field cannot be empty!';
         }
 
         if(!this.state.membertwo){
-            membertwoError = 'Member 1 field cannot be empty!';
+            membertwoError = 'Member 2 field cannot be empty!';
         }
 
         if(!this.state.memberthree){
-            memberthreeError = 'Member 2 field cannot be empty!';
+            memberthreeError = 'Member 3 field cannot be empty!';
         }
 
         if(!this.state.vehicleNo){
-            vehicleNoError = 'Member 3 field cannot be empty!';
+            vehicleNoError = 'Field cannot be empty!';
         }
 
         if(teamcodeError || memberoneError || membertwoError || memberthreeError ||vehicleNoError){
