@@ -1,8 +1,11 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
+
+
 import DoPayment from './Pages/DoPayment';
 import ViewCart from './Pages/viewCart';
+
 
 //Item Details Pages
 import Insert_Item_Dtl from './Pages/Insert_Item_Dtl';
@@ -13,6 +16,9 @@ import Home from './Pages/Home';
 import Signup from './Pages/Signup';
 import Signin from './Pages/Signin';
 
+//Delivery pages
+import AddDteam from './Pages/AddDteam';
+import ViewTeam from './Pages/ViewTeam';
 
 function App(){
   return(
@@ -29,6 +35,9 @@ function App(){
       
       <Route path='/viewcart' element={<ViewCart/>}/>
       <Route path='/pay' element={<DoPayment/>}/>
+
+      <Route path='/addteam' element={<AddDteam/>}/>
+      <Route path='/viewteam' element={<ViewTeam/>}/>
     </Routes>
  
 </Router>
