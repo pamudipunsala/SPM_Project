@@ -465,3 +465,11 @@ input[type="search"]{
 .delete{
   color: rgb(252, 2, 2);
 }
+
+.signup-container{
+  background-image: url('./images/3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.8;
+}
