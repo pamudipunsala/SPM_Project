@@ -10,6 +10,7 @@ import ViewCart from './Pages/viewCart';
 //Item Details Pages
 import Insert_Item_Dtl from './Pages/Insert_Item_Dtl';
 import ViewItemDtl from './Pages/ViewItemDtl';
+import EditItemDtl from './Pages/EditItemDtl';
 
 //Login pages
 import Home from './Pages/Home';
@@ -32,6 +33,7 @@ function App(){
 
       <Route path='/additems' element={<Insert_Item_Dtl/>}/>
       <Route path='/viewIDtl' element={<ViewItemDtl/>}/>
+      {/* <Route path='/update/:id' element={<EditItemDtl/>}/> */}
       
       <Route path='/viewcart' element={<ViewCart/>}/>
       <Route path='/pay' element={<DoPayment/>}/>

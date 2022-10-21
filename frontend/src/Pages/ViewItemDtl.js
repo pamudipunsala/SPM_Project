@@ -42,7 +42,8 @@ class ViewItemDtl extends Component{
             this.filterData(res.data.existingItems,searchKey)
       }
       });
-    }
+      }
+
     
     render(){
         return(
@@ -50,7 +51,7 @@ class ViewItemDtl extends Component{
                 <div className="additem" >
                 <div className="ish">
                 <div style={{textAlign:"center", paddingTop:"50px"}}>
-                <h2>All Topic Details</h2>                        
+                <h2>All Items Details</h2>                        
                 <div>
                 <input className="search" type="search" placeholder="Search" name="searchQuery" onChange={this.handleSearchArea}>
             </input><br/><br/>
