@@ -4,7 +4,7 @@ import "../index.css";
 import "./button.css"
 import emailjs from '@emailjs/browser';
 
-//const form = useRef();
+
 export default class DoPayment extends Component {
     constructor(props){
         super(props);
@@ -54,7 +54,7 @@ export default class DoPayment extends Component {
 
         axios.post("http://localhost:5000/payment/save",data).then((res) => {
             if(res.data.success){
-                alert("Details Saved Successfully")
+                alert("Paid Successfully")
                 this.setState(
                     {
                         cname:"",
@@ -68,17 +68,9 @@ export default class DoPayment extends Component {
                     }
                 )
             }
-            else {
-                alert("invlid input")
-            }
         })
 
-        //emailjs.sendForm('service_po4f3vc', 'template_mzpvntf', form.current, 'r0p6mYficqz5Ov-qX')
-          //  .then((result) => {
-            //    console.log(result.text);
-            //}, (error) => {
-              //  console.log(error.text);
-        //});
+        
     }
 
     render(){
@@ -189,7 +181,7 @@ export default class DoPayment extends Component {
                         />
                     
 
-                    <button className="button-29" role="button" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}  > Checkout
+                    <button className="button-29" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}  > Checkout
                     </button>
                 </form>
                 </div>

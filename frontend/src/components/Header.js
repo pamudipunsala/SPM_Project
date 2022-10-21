@@ -34,8 +34,10 @@ const Header = () => {
                     </li>
 
                     <li className="nav-item">
-                        <a href={'/viewcart'} className="nav-link">Shopping Cart</a>
+                        <a href={'/paylist'} className="nav-link">Payment List</a>
                     </li>
+
+
                     
                     
                 </ul>
