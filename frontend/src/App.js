@@ -2,11 +2,8 @@ import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
 
-<<<<<<< Updated upstream
 
-=======
 //Cart & Payment Pages
->>>>>>> Stashed changes
 import DoPayment from './Pages/DoPayment';
 import ViewCart from './Pages/viewCart';
 import ViewPayments from './Pages/ViewPayments';
@@ -43,15 +40,12 @@ function App(){
       
       <Route path='/viewcart' element={<ViewCart/>}/>
       <Route path='/pay' element={<DoPayment/>}/>
-<<<<<<< Updated upstream
 
       <Route path='/addteam' element={<AddDteam/>}/>
       <Route path='/viewteam' element={<ViewTeam/>}/>
-=======
       <Route path='/paylist' element={<ViewPayments/>}/>
       <Route path='/thanks' element={<thanks/>}/>
 
->>>>>>> Stashed changes
     </Routes>
  
 </Router>
