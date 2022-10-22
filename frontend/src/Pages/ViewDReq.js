@@ -56,7 +56,7 @@ class ViewReq extends Component{
     render(){
         return(
             
-                <div className="viewreq" >
+                <div className="addreq" >
                 <div className="ish">
                 <div style={{textAlign:"center", paddingTop:"50px"}}>
                 <h2>Delivery Requests</h2>                        
