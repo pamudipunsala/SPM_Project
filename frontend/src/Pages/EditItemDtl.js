@@ -1,60 +1,22 @@
-import React, {Component} from "react";
-import axios from "axios";
+import React, {Component} from 'react'
+import axios from 'axios'
 
-const istate = {
-    icode:"",
-    iname:"",
-    ctg:"",
-    amt:"",
-    price:"",
-    icodeError:"",
-    inameError:"",
-    ctgError:"",
-    amtError:"",
-    priceError:""
-
-}
-
-
-export default class EditItemDtl extends Component{
-    
-    state = istate;
-
-    validate = () => {
-        let icodeError = "";
-        let inameError = "";
-        let ctgError = "";
-        let amtError = "";
-        let priceError = "";
-
-        if(!this.state.icode){
-            icodeError = 'Group ID field cannot be empty!';
+class EditItemDtl extends Component{
+    constructor(props){
+        super(props)
+        this.state =  {
+            icode:"",
+            iname:"",
+            ctg:"",
+            amt:"",
+            price:"",
+            icodeError:"",
+            inameError:"",
+            ctgError:"",
+            amtError:"",
+            priceError:""
         }
-
-        if(!this.state.iname){
-            inameError = 'Group Leaders\' field cannot be empty!';
-        }
-
-        if(!this.state.ctg){
-            ctgError = 'Member 1 field cannot be empty!';
-        }
-
-        if(!this.state.amt){
-            amtError = 'Member 2 field cannot be empty!';
-        }
-
-        if(!this.state.price){
-            priceError = 'Member 3 field cannot be empty!';
-        }
-
-        if(icodeError || inameError || ctgError || amtError ||priceError){
-            this.setState({icodeError, inameError, ctgError, amtError, priceError});
-            return false;
-        }
-
-        return true;
     }
-
 
     InputChange = (e)=>{
         const {name,value} = e.target;
@@ -64,43 +26,36 @@ export default class EditItemDtl extends Component{
         })
     }
 
-    onSubmit = (e)=>{
+    onSubmit=(event)=>{
+        event.preventDefault();
         const id = this.props.match.params.id;
         const{icode, iname, ctg, amt, price} = this.state;
-        const itDtl={
+        
+        const itDtl = {
             icode:icode,
             iname:iname,
             ctg:ctg,
             amt:amt,
             price:price
         }
-
-        const isValid = this.validate();
-        if(isValid){
-            this.setState(istate);
-        axios.put(`http://localhost:5000/items/update/${id}`,itDtl).then((res)=>{
-            alert("Details updated successfully")
+        
+        axios.put(`http://localhost:5000/items/update/${id}`, itDtl).then((res)=>{
+            alert("Details updated");
             if(res.data.success){
-                
                 this.setState({
                     icode:"",
                     iname:"",
                     ctg:"",
                     amt:"",
                     price:"",
-                }
-                    
-                );
+                })
             }
-        }).catch((err)=>{
-            alert(err)
         })
-    };
     }
 
     componentDidMount(){
         const id = this.props.match.params.id;
-        axios.get(`http://localhost:5000/items/${id}`).then((res)=>{
+        axios.get(`http://localhost:5000/items/${id}`).then((res) => {
             if(res.data.success){
                 this.setState({
                     icode:res.data.items.icode,
@@ -108,15 +63,14 @@ export default class EditItemDtl extends Component{
                     ctg:res.data.items.ctg,
                     amt:res.data.items.amt,
                     price:res.data.items.price
-
                 });
                 
             }
-        });
-    }
-  
+        })
+    }   
+
     render(){
-        return (
+        return(
             <div className="additem">
                 <div className="ish">
                 <button className="abtn" type="button"><a href="/viewIDtl" style={{textDecoration:'none',color:'white'}} required><b>View Details</b></a></button>
@@ -187,6 +141,8 @@ export default class EditItemDtl extends Component{
                 </div>
                 </div>
             </div>
-        )
+            );   
     }
 }
+
+export default EditItemDtl;

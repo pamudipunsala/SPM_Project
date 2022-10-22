@@ -241,7 +241,7 @@ h3 {
 }
 
 label{
-  text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em wheat;
+  font-weight: bold;
 }
 
 input[type="text"],
@@ -472,4 +472,12 @@ input[type="search"]{
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.8;
+}
+
+.b1{
+  color: #f1f2f3;
+  border-width: 0ch;
+  padding: 10px;
+  margin: 60px;
+  width: 300px;
 }

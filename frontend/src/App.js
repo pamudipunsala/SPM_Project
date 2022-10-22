@@ -14,6 +14,7 @@ import thanks from './Pages/thanks';
 import Insert_Item_Dtl from './Pages/Insert_Item_Dtl';
 import ViewItemDtl from './Pages/ViewItemDtl';
 import EditItemDtl from './Pages/EditItemDtl';
+import ViewSingleItem from './Pages/ViewSingleItem';
 
 //Login pages
 import Home from './Pages/Home';
@@ -41,6 +42,7 @@ function App(){
       <Route path='/additems' element={<Insert_Item_Dtl/>}/>
       <Route path='/viewIDtl' element={<ViewItemDtl/>}/>
       <Route path='/update/:id' element={<EditItemDtl/>}/>
+      <Route path='/viewsitem/:id' element={<ViewSingleItem/>}/>
       
       <Route path='/viewcart' element={<ViewCart/>}/>
       <Route path='/pay' element={<DoPayment/>}/>

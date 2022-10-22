@@ -53,16 +53,18 @@ class Home extends Component{
                 <div style={{textAlign:"center", paddingTop:"50px"}}>
                 <input className="search" type="search" placeholder="Search" name="searchQuery" onChange={this.handleSearchArea}></input><br/><br/>                     
                 <div>
-                    <button type="button"><a href="/additems">
+                    
                         {this.state.items.map((items,index) => (
-                            <div key={index}>
-                                <li>Item Code : {items.icode}</li>
-                                <li>Item Name : {items.iname}</li>
-                                <li>Price :{items.price}</li>                          
-                            </div>
+                            // <div key={index}>
+                                <button type="button" className='b1'><a href={`/viewsitem/${items._id}`}>
+                                <label>Item Code : {items.icode}</label><br/>
+                                <label>Item Name : {items.iname}</label><br/>
+                                <label>Price :{items.price}</label><br/>
+                                </a>
+                                </button>                      
+                            // </div>
                         ))}
-                        </a>
-                    </button>
+                        
                 </div>
                 </div>
                 </div>
