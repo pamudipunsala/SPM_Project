@@ -25,6 +25,13 @@ class ViewTeam extends Component{
         });
     }
 
+
+    OnDelete = (id) => {
+        axios.delete(`http://localhost:5000/dteam/delete/${id}`).then((res) => {
+            alert("Delete Successfully");
+            this.displayTeam();
+        })
+    }
     filterData(teams,searchKey){
         const result = teams.filter((teams)=>
         teams.teamcode.includes(searchKey)||
@@ -35,6 +42,8 @@ class ViewTeam extends Component{
         )
         this.setState({teams:result})
       }
+    
+      
 
     handleSearchArea= (e)=>{
         const searchKey =e.currentTarget.value;
@@ -83,7 +92,7 @@ class ViewTeam extends Component{
                                         </a>
                                     </td>
                                     <td>
-                                    <a className="delete" href="#" onClick={()=>this.onDelete(teams._id)}><b>
+                                    <a className="delete" href="#" onClick={()=>this.OnDelete(teams._id)}><b>
                                         <i className="fas fa-trash-alt"></i>Delete</b>
                                     </a>
                                 </td>                            
