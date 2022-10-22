@@ -26,29 +26,6 @@ export default class Insert_Item_Dtl extends Component{
         };
     }
 
-    // componentDidMount(){
-    //     this.redtrievedata();
-    // }
-
-    // filterData(item){
-    //     const result = item.filter((staffmem) =>
-    //         staffmem.staff === "Co-supervisor"
-    //     )
-
-    //     this.setState({staff1:result})
-    // }
-
-    // redtrievedata(){
-    //     axios.get("http://localhost:5000/items").then(res => {
-    //         if (res.data.success) {
-    //             this.setState({
-    //                 specitem:this.filterData(res.data.item)
-    //             })
-    //             console.log(this.state.specitem)
-    //         }
-    //     });
-    // }
-
     validate = () => {
         let icodeError = "";
         let inameError = "";
@@ -106,7 +83,6 @@ export default class Insert_Item_Dtl extends Component{
             price:price
         }
 
-        //console.log(customer)
         const isValid = this.validate();
         if (isValid) {
             console.log(this.state);
