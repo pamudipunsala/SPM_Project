@@ -23,6 +23,7 @@ import Signin from './Pages/Signin';
 //Delivery pages
 import AddDteam from './Pages/AddDteam';
 import ViewTeam from './Pages/ViewTeam';
+import Assigndel from './Pages/AssignDelivery';
 
 function App(){
   return(
@@ -43,6 +44,8 @@ function App(){
 
       <Route path='/addteam' element={<AddDteam/>}/>
       <Route path='/viewteam' element={<ViewTeam/>}/>
+      <Route path='/assigndel' element={<Assigndel/>}/>
+
       <Route path='/paylist' element={<ViewPayments/>}/>
       <Route path='/thanks' element={<thanks/>}/>
 

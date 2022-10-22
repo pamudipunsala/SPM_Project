@@ -8,11 +8,15 @@ const iState = {
     membertwo:"",
     memberthree:"",
     vehicleNo:"",
+    orderid:"",
+    status:"",
     teamcodeError:"",
     memberoneError:"",
     membertwoError:"",
     memberthreeError:"",
-    vehicleNoError:""
+    vehicleNoError:"",
+    orderiderror:"",
+    statuserror:""
 }
 
 export default class AddDteam extends Component{
@@ -32,6 +36,8 @@ export default class AddDteam extends Component{
         let membertwoError = "";
         let memberthreeError = "";
         let vehicleNoError = "";
+        //let orderiderror = "";
+        //let statuserror = "";
 
         if(!this.state.teamcode){
             teamcodeError = 'Team ID field cannot be empty!';
@@ -73,14 +79,16 @@ export default class AddDteam extends Component{
 
     onSubmit = (e) =>{
         e.preventDefault();
-        const{teamcode, memberone, membertwo, memberthree, vehicleNo} = this.state;
+        const{teamcode, memberone, membertwo, memberthree, vehicleNo, orderid, status} = this.state;
 
         const Team = {
             teamcode:teamcode,
             memberone:memberone,
             membertwo:membertwo,
             memberthree:memberthree,
-            vehicleNo:vehicleNo
+            vehicleNo:vehicleNo,
+            orderid:orderid,
+            status:status
         }
 
      
@@ -98,6 +106,8 @@ export default class AddDteam extends Component{
                     membertwo:"",
                     memberthree:"",
                     vehicleNo:"",
+                    orderid:"",
+                    status:"",
                 })
             }
         }).catch((err)=>{

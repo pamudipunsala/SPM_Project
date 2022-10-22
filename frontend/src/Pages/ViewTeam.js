@@ -38,7 +38,9 @@ class ViewTeam extends Component{
         teams.memberone.includes(searchKey)||
         teams.membertwo.includes(searchKey)||
         teams.memberthree.includes(searchKey)||
-        teams.vehicleNo.includes(searchKey)
+        teams.vehicleNo.includes(searchKey)||
+        teams.orderid.includes(searchKey)||
+        teams.status.includes(searchKey)
         )
         this.setState({teams:result})
       }
@@ -73,6 +75,8 @@ class ViewTeam extends Component{
                             <th scope="col">Member 2 Name</th>
                             <th scope="col">Member 3 Name</th>
                             <th scope="col">Vehicle Number</th>
+                            <th scope="col">Order ID</th>
+                            <th scope="col">Delivery status</th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
@@ -86,9 +90,16 @@ class ViewTeam extends Component{
                                 <td>{teams.membertwo}</td>
                                 <td>{teams.memberthree}</td>
                                 <td>{teams.vehicleNo}</td>
+                                <td>{teams.orderid}</td>
+                                <td>{teams.status}</td>
                                 <td>
-                                <a className="edit" href={`/update/${teams._id}`}><b>
+                                <a className="edit" href={`/${teams._id}`}><b>
                                         <i className="fas fa-edit"></i>Edit</b>
+                                        </a>
+                                    </td>
+                                    <td>
+                                <a className="edit" href={`assigndel/${teams._id}`}><b>
+                                        <i className="fas fa-edit"></i>Assign</b>
                                         </a>
                                     </td>
                                     <td>
