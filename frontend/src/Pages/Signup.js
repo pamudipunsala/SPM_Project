@@ -72,7 +72,9 @@ const Signup = () => {
                 onChange={handleChange} 
             />
 
-            <div className="button" >Signup</div>
+            <div className="button" >
+                <button type='submit' className="button">Signup</button>
+            </div>
             <p className='text-center'>
                 Have an account? <Link to='/signin'>Log In</Link>
             </p>
