@@ -24,6 +24,13 @@ class ViewItemDtl extends Component{
         });
     }
 
+    onDelete=(id)=>{
+        axios.delete(`http://localhost:5000/items/delete/${id}`).then((res)=>{
+          alert("Delete successful");
+          this.displayItem();
+        })
+      }
+
     filterData(items,searchKey){
         const result = items.filter((items)=>
         items.icode.includes(searchKey)||
@@ -42,7 +49,7 @@ class ViewItemDtl extends Component{
             this.filterData(res.data.existingItems,searchKey)
       }
       });
-      }
+    }
 
     
     render(){
@@ -51,10 +58,11 @@ class ViewItemDtl extends Component{
                 <div className="additem" >
                 <div className="ish">
                 <div style={{textAlign:"center", paddingTop:"50px"}}>
-                <h2>All Items Details</h2>                        
+                <h2>All Items Details</h2>  
+                <br/><input className="form-control" type="search" placeholder="Search" name="searchQuery" onChange={this.handleSearchArea}/>                     
                 <div>
-                <input className="search" type="search" placeholder="Search" name="searchQuery" onChange={this.handleSearchArea}>
-            </input><br/><br/>
+                
+                <br/><br/>
                 <table className="table" style={{margin: "auto", padding: "15px", maxWidth: "1000px", alignContent: "center", color: "white"}}>
                     <thead>
                         <tr>

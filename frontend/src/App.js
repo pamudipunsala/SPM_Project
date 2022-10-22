@@ -34,12 +34,13 @@ function App(){
     <Header />
     <Routes>
       <Route path='/' element={<Home/>}/>
+      
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/signin' element={<Signin/>}/>
 
       <Route path='/additems' element={<Insert_Item_Dtl/>}/>
       <Route path='/viewIDtl' element={<ViewItemDtl/>}/>
-      {/* <Route path='/update/:id' element={<EditItemDtl/>}/> */}
+      <Route path='/update/:id' element={<EditItemDtl/>}/>
       
       <Route path='/viewcart' element={<ViewCart/>}/>
       <Route path='/pay' element={<DoPayment/>}/>
