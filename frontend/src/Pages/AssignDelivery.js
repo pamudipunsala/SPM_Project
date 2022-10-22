@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import axios from "axios";
+import '../index.css';
 
 const iState = {
     teamcode:"",
@@ -26,7 +27,7 @@ export default class Assigndel extends Component{
         super(props);
     
         this.state={
-            team:[],
+            teams:[],
         };
     }
 
@@ -84,7 +85,7 @@ export default class Assigndel extends Component{
        e.prevenrDefault();
        const id = this.props.match.params.id;
        const{teamcode, memberone, membertwo, memberthree, vehicleNo, orderid, status} = this.state;
-        const Team = {
+        const data = {
             teamcode:teamcode,
             memberone:memberone,
             membertwo:membertwo,
@@ -96,7 +97,7 @@ export default class Assigndel extends Component{
         const isValid = this.validate();
         if(isValid){
             this.setState(iState);
-        axios.put(`http://localhost:5000/dteam/update/${id}`,Team).then((res)=>{
+        axios.put(`http://localhost:5000/dteam/update/${id}`,data).then((res)=>{
             alert("Delivery assigned")
             if(res.data.success){
                 
@@ -139,107 +140,190 @@ export default class Assigndel extends Component{
   
   render(){
     return(
-      
-      <div className="col-md-8 mt-4 mx-auto">
-          <h1 className="h3 mb-3 font-weight-normal">Update booking</h1>
-         <form className="needs-validation" noValidate>
-          <div class="form-group">
+        <div className="addteam">
+        <div className="ish">
+        <button className="abtn" type="button"><a href="/viewteam" style={{textDecoration:'none',color:'white'}} required><b>View Teams</b></a></button>
+        <div className="new"> 
+        <form style={{margin: "auto", padding: "15px", maxWidth: "400px", alignContent: "center", backgroundColor: "rgba(0, 0, 0, 0.560)", color:'white'}}>
+            <div >
+            <h2>Assign delivery to teams</h2>
 
-              <label style={{marginBottom:'5px'}}>BookingID</label>
-              <input type="text" class="form-control" name="BookingID" placeholder="Enter Booking ID"
-              value={this.state.BookingID} 
+            <div>
+                <label name="teamcode"><b>Team Code</b></label><br/>
+                <input type="text" 
+                    name='teamcode' 
+                    id='teamcode' 
+                    placeholder="Eg:AB100" 
+                    value={this.state.teamcode} 
+                    onChange={this.InputChange}/>
+            </div>
+            <div style={{color: "red"}}><b>{this.state.teamcodeError}</b></div>
+            
+            <div>
+                <label name="memberone"><b>Member one Name</b></label><br/>
+                <input type="text" 
+                    name='memberone' 
+                    id='memberone' 
+                    placeholder="Eg:Kusal Fernando" 
+                    value={this.state.memberone} 
+                    onChange={this.InputChange}/>
+            </div>
+            <div style={{color: "red"}}><b>{this.state.memberoneError}</b></div>
+
+            <div>
+                <label name="membertwo"><b>Member Two Name</b></label><br/>
+                <input type="text" 
+                    name='membertwo' 
+                    id='membertwo' 
+                    placeholder="Eg:Hansaka Eranda" 
+                    value={this.state.membertwo} 
+                    onChange={this.InputChange}/>
+            </div>
+            <div style={{color: "red"}}><b>{this.state.membertwoError}</b></div>
+
+            <div>
+                <label name="memberthree"><b>Membert Three Name</b></label><br/>
+                <input type="text" 
+                    name='memberthree' 
+                    id='memberthree' 
+                    placeholder="Eg:Pamudi Punsala" 
+                    value={this.state.memberthree} 
+                    onChange={this.InputChange}/>
+            </div>
+            <div style={{color: "red"}}><b>{this.state.memberthreeError}</b></div>
+
+            <div>
+                <label name="vehicleNo"><b>Vehicle Number</b></label><br/>
+                <input type="text" 
+                    name='vehicleNo' 
+                    id='vehicleNo' 
+                    placeholder="Eg:GU1010" 
+                    value={this.state.vehicleNo} 
+                    onChange={this.InputChange}/>
+            </div>
+            <div style={{color: "red"}}><b>{this.state.vehicleNoError}</b></div>
+
+            <div>
+                <label name="orderid"><b>Order ID</b></label><br/>
+                <input type="text" 
+                    name='orderid' 
+                    id='orderid' 
+                    placeholder="Eg:XZ000" 
+                    value={this.state.orderid} 
+                    onChange={this.InputChange}/>
+            </div>
+            <div style={{color: "red"}}><b>{this.state.orderiderror}</b></div>
+
+            <div>
+                <label name="status"><b>Delivery status</b></label><br/>
+                <input type="text" 
+                    name='status' 
+                    id='status' 
+                    placeholder="Eg:Pending/Complete/Not Assigned" 
+                    value={this.state.status} 
+                    onChange={this.InputChange}/>
+            </div>
+            <div style={{color: "red"}}><b>{this.state.statuserror}</b></div>
+
+            <br/><br/><br/>
+            <button className="sbtn" type="submit" onClick={this.onSubmit} ><a href="/viewteam" style={{textDecoration:'none',color:'white'}}><b>Save</b></a></button><br/>
+            </div>
+        </form> 
+        </div>
+        </div>
+    </div>
+      
+     
+    )
+  }
+  }
+
+
+
+
+
+
+
+
+
+
+
+  /*<div className="col-md-8 mt-4 mx-auto">
+          <h1 className="h3 mb-3 font-weight-normal">Assign delivery</h1>
+         <form className="needs-validation" noValidate>
+          <div>
+
+              <label style={{marginBottom:'5px'}}>Team ID</label>
+              <input type="text"  name="teamcode" placeholder="Enter team id"
+              value={this.state.teamcode} 
               onChange={this.handleInputChange}/>
 
-          </div><div style={{color: "red"}}>{this.state.biderr}</div>
+          </div><div style={{color: "red"}}>{this.state.teamcodeError}</div>
 
     
 
         
               
-          <div class="form-group">
+          <div>
 
-              <label style={{marginBottom:'5px'}}>PassengerName</label>
-              <input type="text" class="form-control" name="PassengerName" placeholder="Enter passenger name"
-              value={this.state.PassengerName} 
+              <label style={{marginBottom:'5px'}}>member 1</label>
+              <input type="text"  name="memberone" placeholder="Enter Member 1 name"
+              value={this.state.memberone} 
               onChange={this.handleInputChange}/>
 
-          </div><div style={{color: "red"}}>{this.state.nameerr}</div>
+          </div><div style={{color: "red"}}>{this.state.memberoneError}</div>
 
           
 
-          <div class="form-group">
+          <div>
 
-              <label style={{marginBottom:'5px'}}>Telephone</label>
-              <input type="text" class="form-control" name="Telephone" placeholder="Enter passenger Mobile number"
-              value={this.state.Telephone} 
+              <label style={{marginBottom:'5px'}}>member 2</label>
+              <input type="text"  name="memebertwo" placeholder="Enter Member 2 name"
+              value={this.state.membertwo} 
               onChange={this.handleInputChange}/>
 
-          </div><div style={{color: "red"}}>{this.state.telerr}</div>
+          </div><div style={{color: "red"}}>{this.state.membertwoError}</div>
 
-          <div class="form-group">
+          <div>
 
-          <label style={{marginBottom:'5px'}}>Email</label>
-          <input type="email" class="form-control" name="Email" placeholder="Enter passenger email"
-          value={this.state.Email} 
+          <label style={{marginBottom:'5px'}}>member 3</label>
+          <input type="text"  name="memberthree" placeholder="Enter Member 3 name"
+          value={this.state.memberthree} 
           onChange={this.handleInputChange}/>
 
-          </div><div style={{color: "red"}}>{this.state.emailError}</div>
+          </div><div style={{color: "red"}}>{this.state.memberthreeError}</div>
 
 
-          <div class="form-group">
+          <div>
 
-              <label style={{marginBottom:'5px'}}>SeatNo</label>
-              <input type="text" class="form-control" name="SeatNo" placeholder="Enter seat number"
-              value={this.state.SeatNo} 
+              <label style={{marginBottom:'5px'}}>VehicleNo</label>
+              <input type="text"  name="vehicleno" placeholder="Enter vehicle number"
+              value={this.state.vehicleNo} 
               onChange={this.handleInputChange}/>
 
-          </div><div style={{color: "red"}}>{this.state.seaterr}</div>
+          </div><div style={{color: "red"}}>{this.state.vehicleNoError}</div>
 
-          <div class="form-group">
+          <div>
 
-              <label style={{marginBottom:'5px'}}>Departure</label>
-              <input type="text" class="form-control" name="Departure" placeholder="Enter Departure location"
-              value={this.state.Departure} 
+              <label style={{marginBottom:'5px'}}>Order ID</label>
+              <input type="text"  name="orderid" placeholder="Enter Order ID"
+              value={this.state.orderid} 
               onChange={this.handleInputChange}/>
 
-          </div><div style={{color: "red"}}>{this.state.deperr}</div>
+          </div><div style={{color: "red"}}>{this.state.orderiderror}</div>
 
-          <div class="form-group">
+          <div>
 
-              <label style={{marginBottom:'5px'}}>Arrival</label>
-              <input type="text" class="form-control" name="Arrival" placeholder="Enter Arrival location"
-              value={this.state.Arrival} 
+              <label style={{marginBottom:'5px'}}>Status</label>
+              <input type="text"  name="status" placeholder="Enter status of delivery"
+              value={this.state.status} 
               onChange={this.handleInputChange}/>
 
-          </div><div style={{color: "red"}}>{this.state.arriverr}</div>
+          </div><div style={{color: "red"}}>{this.state.statuserror}</div>
 
-          <div class="form-group">
-
-              <label style={{marginBottom:'5px'}}>depTime</label>
-              <input type="text" class="form-control" name="depTime" placeholder="Enter depurture time"
-              value={this.state.depTime} 
-              onChange={this.handleInputChange}/><div style={{color: "red"}}>{this.state.timeerr}</div>
-
-          </div>
-
-          <div class="form-group">
-
-              <label style={{marginBottom:'5px'}}>Date</label>
-              <input type="text" class="form-control" name="Date" placeholder="Enter date"
-              value={this.state.Date} 
-              onChange={this.handleInputChange}/><div style={{color: "red"}}>{this.state.deperr}</div>
-
-          </div>
-
-
-
-
+          
 
           <button className="btn btn-warning" type="submit" style={{textDecoration:'none',colour:'#FFF'}} onClick={this.onSubmit}><a href="#">Update</a></button>
 </form>
 
-      </div>
-     
-    )
-  }
-  }
+      </div> */

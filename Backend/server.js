@@ -11,6 +11,7 @@ const paymentRoutes = require('./routes/payments');
 const userRoutes= require('./routes/user');
 const cartRoutes=require('./routes/cart');
 const DteamRoutes=require('./routes/Dteam');
+const DreqRoutes=require('./routes/Dreq');
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -20,6 +21,7 @@ app.use(paymentRoutes);
 app.use(userRoutes);
 app.use(cartRoutes);
 app.use(DteamRoutes);
+app.use(DreqRoutes);
 
 connectDB();
 

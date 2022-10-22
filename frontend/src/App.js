@@ -24,6 +24,8 @@ import Signin from './Pages/Signin';
 import AddDteam from './Pages/AddDteam';
 import ViewTeam from './Pages/ViewTeam';
 import Assigndel from './Pages/AssignDelivery';
+import AddDreq from './Pages/AddDelReq';
+import ViewReq from './Pages/ViewDReq';
 
 function App(){
   return(
@@ -45,6 +47,8 @@ function App(){
       <Route path='/addteam' element={<AddDteam/>}/>
       <Route path='/viewteam' element={<ViewTeam/>}/>
       <Route path='/assigndel' element={<Assigndel/>}/>
+      <Route path='/addreq' element={<AddDreq/>}/>
+      <Route path='/viewreq' element={<ViewReq/>}/>
 
       <Route path='/paylist' element={<ViewPayments/>}/>
       <Route path='/thanks' element={<thanks/>}/>

@@ -91,12 +91,13 @@ class ViewTeam extends Component{
                                 <td>{teams.memberthree}</td>
                                 <td>{teams.vehicleNo}</td>
                                 <td>{teams.orderid}</td>
-                                <td>{teams.status}</td>
-                                <td>
+                               <td>{teams.status}</td>
+                                {/* <td>
+                                    
                                 <a className="edit" href={`/${teams._id}`}><b>
                                         <i className="fas fa-edit"></i>Edit</b>
                                         </a>
-                                    </td>
+                                    </td> */}
                                     <td>
                                 <a className="edit" href={`assigndel/${teams._id}`}><b>
                                         <i className="fas fa-edit"></i>Assign</b>
