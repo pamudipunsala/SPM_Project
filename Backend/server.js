@@ -13,6 +13,7 @@ const userRoutes= require('./routes/user');
 const cartRoutes=require('./routes/cart');
 const DteamRoutes=require('./routes/Dteam');
 const DreqRoutes=require('./routes/Dreq');
+const orderRoutes=require('./routes/order');
 
 const authRoutes = require('./routes/auth');
 
@@ -28,6 +29,8 @@ app.use(userRoutes);
 app.use(cartRoutes);
 app.use(DteamRoutes);
 app.use(DreqRoutes);
+app.use(orderRoutes);
+
 
 app.use('/api/auth', authRoutes);
 

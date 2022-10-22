@@ -13,6 +13,10 @@ const paymentSchema = new mongoose.Schema({
         type:Date,
         required:true
     },
+    cemail:{
+        type:String,
+        required:true
+    },
     expMonth:{
         type:String,
         required:true
@@ -24,15 +28,8 @@ const paymentSchema = new mongoose.Schema({
     cvv:{
         type:String,
         required:true
-    },
-    cemail:{
-        type:String,
-        required:true
-    },
-    amount:{
-        type:Number,
-        required:true
     }
+    
 });
 
 module.exports = mongoose.model('Payment', paymentSchema)

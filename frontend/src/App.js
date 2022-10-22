@@ -7,7 +7,12 @@ import Header from './components/Header';
 import DoPayment from './Pages/DoPayment';
 import ViewCart from './Pages/viewCart';
 import ViewPayments from './Pages/ViewPayments';
-import thanks from './Pages/thanks';
+import ViewOrder from './Pages/ViewOrders';
+import EditOrder from './Pages/EditOrder';
+import Thanks from './Pages/thanks';
+import CreateOrder from './Pages/CreateOrder1';
+import Admin from './components/Admin'
+
 
 
 //Item Details Pages
@@ -54,7 +59,11 @@ function App(){
       <Route path='/viewreq' element={<ViewReq/>}/>
 
       <Route path='/paylist' element={<ViewPayments/>}/>
-      <Route path='/thanks' element={<thanks/>}/>
+      <Route path='/thanks' element={<Thanks/>}/>
+      <Route path='/vieworders' element={<ViewOrder/>}/>
+      <Route path='/editorders/:id' element={<EditOrder/>}/>
+      <Route path='/createorder' element={<CreateOrder/>}/>
+      <Route path='/adminpage' element={<Admin/>}/>
 
     </Routes>
  

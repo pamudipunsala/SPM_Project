@@ -1,28 +1,28 @@
 const express = require('express');
-const Payment = require('../models/payments');
+const Order = require('../models/order');
 
 const router = express.Router();
 
 //save payment
-router.post('/payment/save', (req,res) =>{
-    let newPayment = new Payment(req.body);
+router.post('/order/save', (req,res) =>{
+    let newOrder = new Order(req.body);
 
-    newPayment.save((err) => {
+    newOrder.save((err) => {
         if(err){
             return res.status(400).json({
                 error:err
             });
         }
         return res.status(200).json({
-            success:newPayment
+            success:newOrder
             
         });
     });
 });
 
 //get payment
-router.get('/payment',(req,res)=>{
-    Payment.find().exec((err,payment) => {
+router.get('/order',(req,res)=>{
+    Order.find().exec((err,order) => {
         if(err){
             return res.status(400).json({
                 error:err
@@ -30,30 +30,30 @@ router.get('/payment',(req,res)=>{
         }
         return res.status(200).json({
             success:true,
-            existingPayment:payment
+            existingOrder:order
         });
     });
 });
 
 //get a specific payment details
-router.get('/payment/:id',(req,res)=>{
-    let paymentId = req.params.id;
+router.get('/order/:id',(req,res)=>{
+    let orderId = req.params.id;
 
-    Payment.findById(paymentId,(err,payment) => {
+    Order.findById(orderId,(err,order) => {
         if(err){
             return res.status(400).json({success:false,err});
         }
 
         return res.status(200).json({
             success:true,
-            payment
+            order
         });
     });
 });
 
 //update payment
-router.put('/payment/update/:id',(req,res) => {
-    Payment.findByIdAndUpdate(
+router.put('/order/update/:id',(req,res) => {
+    Order.findByIdAndUpdate(
         req.params.id,{
             $set:req.body
         },
@@ -69,13 +69,13 @@ router.put('/payment/update/:id',(req,res) => {
 });
 
 //delete payment 
-router.delete('/payment/delete/:id',(req,res) => {
-    Payment.findByIdAndRemove(req.params.id).exec((err,deletePayment) => {
+router.delete('/order/delete/:id',(req,res) => {
+    Order.findByIdAndRemove(req.params.id).exec((err,deleteOrder) => {
         if(err) return res.status(400).json({
             message:"Delete unsuccessful",err
         });
         return res.json({
-            message:"Delete successful", deletePayment
+            message:"Delete successful", deleteOrder
         });
     });
 });
