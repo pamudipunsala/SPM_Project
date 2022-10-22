@@ -6,16 +6,17 @@ import { showErrorMsg, showSuccessMsg } from '../helpers/message';
 import { showLoading } from '../helpers/loading';
 import { Link } from 'react-router-dom';
 import '../index.css';
+import { signup } from '../api/auth';
 
 const Signup = () => {
     const[formData, setFormData] = useState({
-        username: '',
-        email: '',
-        password: '',
-        password2: '',
+        username: 'hansaka',
+        email: 'hansaka@gmail.com',
+        password: '123',
+        password2: '123',
         successMsg: false,
         errorMsg: false,
-        loading: true
+        loading: false
     })
 
     const {
@@ -57,9 +58,26 @@ const Signup = () => {
                 ...formData, errorMsg: 'Passwords do not match'
             });
         } else {
-            setFormData({
-                ...formData, successMsg: 'Validation Success'
-            });
+            const { username, email, password } = formData;
+            const data ={ username, email, password };
+
+            setFormData({...formData, loading: true});
+            signup(data)
+                .then((response) => {
+                    console.log('Axios signup success: ', response);
+                    setFormData({
+                        username: '',
+                        email: '',
+                        password: '',
+                        password2: '',
+                        loading: false,
+                        successMsg: response.data.successMessage
+                    })
+                })
+                .catch((err) => {
+                    console.log('Axios signup error: ', err);
+                    setFormData({...formData, loading: false });
+                });
 
         }
     };
