@@ -22,6 +22,14 @@ const DteamSchema = new mongoose.Schema({
     vehicleNo:{
         type:String,
         // required:true
+    },
+    orderid:{
+        type:String,
+        // required:true
+    },
+    status:{
+        type:String,
+        // required:true
     }
 
 });
