@@ -40,7 +40,15 @@ const Header = () => {
                     <li className="nav-item">
                         <a href={'/paylist'} className="nav-link">Payment List</a>
                     </li>
-                    
+                    <li className="nav-item">
+                        <a href={'/viewteam'} className="nav-link">Delivery team</a>
+                    </li>
+                    <li className="nav-item">
+                        <a href={'/addreq'} className="nav-link">Delivery</a>
+                    </li>
+                    <li className="nav-item">
+                        <a href={'/viewreq'} className="nav-link">Delivery Requests</a>
+                    </li>
                     
 
 
