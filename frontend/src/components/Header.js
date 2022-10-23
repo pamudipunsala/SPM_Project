@@ -41,14 +41,9 @@ const Header = () => {
                         <a href={'/paylist'} className="nav-link">Payment List</a>
                     </li>
                     <li className="nav-item">
-                        <a href={'/viewteam'} className="nav-link">Delivery team</a>
+                        <a href={'/adminpage'} className="nav-link">Admin</a>
                     </li>
-                    <li className="nav-item">
-                        <a href={'/addreq'} className="nav-link">Delivery</a>
-                    </li>
-                    <li className="nav-item">
-                        <a href={'/viewreq'} className="nav-link">Delivery Requests</a>
-                    </li>
+                    
                     
 
 
