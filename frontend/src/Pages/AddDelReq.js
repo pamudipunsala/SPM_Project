@@ -100,7 +100,7 @@ export default class AddDreq extends Component{
     render(){
         return (
             <div className="addreq">
-                <div className="ish">
+                <div className="ish"> 
 
                 <div className="new"> 
                 <form style={{margin: "auto", padding: "15px", maxWidth: "400px", alignContent: "center", backgroundColor: "rgba(0, 0, 0, 0.560)", color:'white'}}>
