@@ -48,7 +48,7 @@ const DoPayment = () =>{
             
             alert("Successfully Paid! Check your Email to confirm payment or click home button to go back.")
             console.log(res.payment.message);
-            navigate('/thanks')
+            window.location.href = ('/thanks')
         })
         .catch((err)=>{
             console.log("Error couldn't do payment");
@@ -58,11 +58,11 @@ const DoPayment = () =>{
     }
 
     return(
-        <div className="container">
+        <div className="additem">
         <div className="register">
+            
+            <form className="needs-validation" ref={form} style={{margin: "auto", padding: "15px", maxWidth: "400px", alignContent: "center", backgroundColor: "rgba(0, 0, 0, 0.560)", color:'white'}}onSubmit={handleSubmit}  noValidate>
             <h1 >Payment Gateway</h1>
-            <form className="needs-validation" ref={form} onSubmit={handleSubmit}  noValidate>
-                
                     <label style={{marginBottom:'5px'}}>Name on card</label>
                         <input
                             className="form-control"

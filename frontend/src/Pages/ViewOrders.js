@@ -60,21 +60,16 @@ export default class ViewOrders extends Component {
 
     render(){
         return(
-            <div className="container">
-                    <div className="row">
-                        <div className="col-lg-8-mt-2 mb-2">
-                            <h2>All orders</h2>
-                        </div>
-                        <div className="col-lg-3 mt-2 mb-2">
+            <div className="additem">
+                    <div className="ish">
+                        <div style={{textAlign:"center", paddingTop:"50px"}}>
+                            <h2>All orders</h2><br/>
+                        
                             <input 
-                            className="form-control"
-                            type="search"
-                            placeholder="Search"
-                            name="searchQuery"
+                            className="form-control" type="search" placeholder="Search" name="searchQuery"
                             onChange={this.handleSearchArea}></input>
-                        </div>
                     </div>
-                    <table className="table">
+                    <table className="table" style={{margin: "auto", padding: "15px", maxWidth: "1000px", alignContent: "center", color: "white"}}>
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -91,11 +86,11 @@ export default class ViewOrders extends Component {
                         {this.state.order.map((order,index) => (
                             <tr key={index}>
                                     <th scope="row">{index+1}</th>
-                                    <td>{order.oname}</td>
-                                    <td>{order.odate}</td>
-                                    <td>{order.address}</td>
-                                    <td>{order.zipcode}</td>
-                                    <td>{order.mobileNo}</td>
+                                    <td style={{color: "white"}}>{order.oname}</td>
+                                    <td style={{color: "white"}}>{order.odate}</td>
+                                    <td style={{color: "white"}}>{order.address}</td>
+                                    <td style={{color: "white"}}>{order.zipcode}</td>
+                                    <td style={{color: "white"}}>{order.mobileNo}</td>
                                     <td>
                                     <a href={`/editorders/${order._id}`} ><button className="btn btn-warning btn-sm"><i className="fas fa-edit"></i>&nbsp;Edit</button></a>
                                     </td>
@@ -108,6 +103,7 @@ export default class ViewOrders extends Component {
                         ))}
                         </tbody>
                     </table>
+                    </div>
                 </div>
         )
     }
