@@ -35,10 +35,10 @@ const CreateOrder = () =>{
             });
             alert("Click ok to checkout!")
             console.log(res.order.message);
+            window.location.href = ('/pay')
             
         })
         .catch((err)=>{
-            console.log("Error couldn't do order");
             console.log(err.message);
         });
     }

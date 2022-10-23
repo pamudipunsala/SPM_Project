@@ -27,6 +27,7 @@ function EditOrder({_id, closeHandler, updateHandler}){
                     zipcode:'', 
                     mobileNo:'',
                 })
+                window.location.href = ('/paylist')
                 
                 })
                 .catch((err)=>{
