@@ -56,7 +56,7 @@ class Home extends Component{
                     
                         {this.state.items.map((items,index) => (
                             // <div key={index}>
-                                <button type="button" className='b1'><a href={`/viewsitem/${items._id}`}>
+                                <button type="button" className='b1'><a href={'/createorder'}>
                                 <label>Item Code : {items.icode}</label><br/>
                                 <label>Item Name : {items.iname}</label><br/>
                                 <label>Price :{items.price}</label><br/>

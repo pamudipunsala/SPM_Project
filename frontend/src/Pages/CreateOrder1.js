@@ -35,7 +35,7 @@ const CreateOrder = () =>{
             });
             alert("Click ok to checkout!")
             console.log(res.order.message);
-            window.location.href = ('/pay')
+            //window.location.href = ("/pay")
             
         })
         .catch((err)=>{
@@ -44,9 +44,10 @@ const CreateOrder = () =>{
     }
 
     return(
-        <div className="col-md-8 mt-4 mx-auto">
+        <div className="additem">
+                <form className="needs-validation" onSubmit={handleSubmit} style={{margin: "auto", padding: "15px", maxWidth: "400px", alignContent: "center", backgroundColor: "rgba(0, 0, 0, 0.560)", color:'white'}} noValidate>
                 <h1 className="h3 mb-3 font-weight-normal">Add Your Shipping Details</h1>
-                <form className="needs-validation" onSubmit={handleSubmit} noValidate>
+
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Customer Name</label>
                         <input type="text"
